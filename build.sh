@@ -25,9 +25,9 @@ rm styles.bundle.js
 
 cd ../../
 
-# git init
-# git add --all
-# git commit -m "build"
-# git branch -M dist
-# git remote add origin git@github.com:username/repo.git
-# git push -u origin dist --force
+ git init
+ git add --all
+ git commit -m "build"
+ git branch -M dist
+ git remote add origin git@github.com:leadbro/lp.git
+ git push -u origin dist --force

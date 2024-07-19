@@ -1,0 +1,80 @@
+.home-banner {
+  background: var(--color-dark);
+  position: relative;
+  overflow: hidden;
+
+  &__wrapper {
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, var(--color-dark) 0%, rgba(8, 45, 145, 0.2) 100%);
+    }
+  }
+
+  &__picture {
+    user-select: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+    width: 65vw;
+  }
+
+  &__image {
+    display: block;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    position: relative;
+    z-index: 2;
+  }
+
+  &__content {
+    color: var(--color-white);
+    padding-top: var(--body-offset);
+  }
+
+  &__title {
+    line-height: 1.1;
+    font-size: 44px;
+
+    margin-top: 60px;
+  }
+
+  &__form-container {
+    color: var(--color-white);
+    padding-top: var(--body-offset);
+    padding-left: calc(2 * var(--side-padding));
+
+    padding-bottom: 120px;
+
+    position: relative;
+
+    &:before {
+      content: '';
+      display: block;
+      background-color: var(--color-dark);
+
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
+
+      width: 50vw;
+    }
+  }
+}

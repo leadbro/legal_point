@@ -1,36 +1,36 @@
 .form-checkbox {
   @mixin checkbox form-checkbox;
 
-  --color-accent: var(--color-black);
-  --color-base: var(--color-gray-2);
-  --color-base-hover: var(--color-green-dark);
-  --color-base-focus: var(--color-tomato);
-  --color-secondary: var(--color-yellow);
+  --color-accent: var(--color-light);
+  --color-base: var(--color-white);
+  --color-base-hover: var(--color-primary);
+  --color-base-focus: var(--color-white);
+  --color-secondary: var(--color-light);
 
-  --check-size: 24px;
+  --check-size: 18px;
 
-  color: var(--color-gray-2);
+  color: var(--color-white);
 
   padding-top: 1px;
   padding-left: 36px;
 
   & &__text {
-    font-size: 12px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 20px;
     font-weight: 400;
 
     &:after {
-      --check-size: 16px;
+      --check-size: 12px;
 
-      top: 5px;
-      left: 6px;
+      top: 0px;
+      left: 7px;
     }
   }
 
   & &__link,
   & &__link ~ &__text {
-    font-size: 11px;
-    line-height: 16px;
+    font-size: 12px;
+    line-height: 17px;
   }
 
   & &__input {

@@ -1,0 +1,56 @@
+<section class="home-banner">
+  <div class="home-banner__wrapper wrapper">
+    <picture class="home-banner__picture picture">
+      <img
+        class="home-banner__image"
+        src="/images/banner.jpg"
+        alt=""
+      />
+    </picture>
+    <div class="home-banner__grid">
+      <div class="home-banner__content">
+        <h1 class="home-banner__title headline headline--h1">Профессиональная юридическая помощь</h1>
+        <p class="home-banner__text">Бесплатная юридическая консультация</p>
+      </div>
+      <div class="home-banner__form-container home-form">
+        <h2 class="home-form__title headline headline--h2">Оставьте заявку</h2>
+        <p class="home-form__text">Если вы хотите задать вопрос или уточнить детали — заполните форму. Мы оперативно ответим на все ваши вопросы.</p>
+
+        <form class="home-form__form js-form" action="/request" method="POST">
+          <input
+            class="home-form__name form-input"
+            type="text"
+            name="name"
+            placeholder="Имя"
+          />
+          <input
+            id="request-form-phone"
+            class="home-form__phone form-input js-form-telnum"
+            type="text"
+            name="phone"
+            placeholder="Телефон *"
+          />
+          <footer class="home-form__footer form-footer">
+            <label class="form-checkbox">
+              <input
+                class="form-checkbox__input"
+                type="checkbox"
+                checked
+                required
+                name="agreement"
+              />
+              <span class="form-checkbox__content">
+              <span class="form-checkbox__link">с&nbsp;<a href="/policy" class="home-form__agreement link link--light js-policy">политикой&nbsp;конфиденциальности</a></span>
+              <span class="form-checkbox__text">Я соглашаюсь на обработку персональных данных и соглашаюсь</span>
+            </span>
+            </label>
+            <button
+              class="home-form__submit form-submit button-primary"
+              type="submit"
+            >Оставить заявку</button>
+          </footer>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

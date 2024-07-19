@@ -1,3 +1,250 @@
 .page-header {
+  --transform-delay: 300ms;
 
+  background-color: var(--color-dark);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, .5);
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, .2);
+
+  width: 100%;
+
+  padding-top: 27px;
+  padding-bottom: 11px;
+
+  padding-right: var(--scrollbar-gap);
+
+  @media (--tablet) {
+    padding-top: 27px;
+  }
+
+  @media (--tablet-landscape) {
+    padding-bottom: 27px;
+  }
+
+  &.headroom {
+    opacity: 1;
+
+    position: fixed;
+    z-index: 100;
+
+    transition:
+        background-color 0ms ease,
+        box-shadow .1s ease,
+        transform var(--transform-delay) ease;
+
+    will-change: transform;
+
+    &--faded {
+      opacity: 0;
+    }
+
+    &--pinned,
+    &--top {
+      transform: translateY(0%);
+    }
+
+    &--not-top {
+      transform: translateY(-14px);
+
+      @media (--tablet-landscape) {
+        transform: none;
+      }
+
+      .page-header__logo {
+        transform: scale(0.8) translateY(4px);
+
+        @media (--tablet) {
+          transform: scale(0.8) translateY(12px);
+        }
+
+        @media (--tablet-landscape) {
+          transform: none;
+        }
+      }
+    }
+
+    &--top:not(.headroom--pinned):not(.headroom--unpinned) {
+      --transform-delay: 0ms;
+    }
+
+    &--unpinned {
+      box-shadow: none;
+      transform: translateY(-100%);
+    }
+  }
+
+  &--fixed {
+    transform: translateY(0);
+    box-shadow: none;
+    background-color: var(--color-white);
+    z-index: 999;
+  }
+
+  &--fixed &__logo {
+    color: var(--color-dark);
+    transform: scale(1);
+  }
+
+  &--fixed &__telnum {
+    color: var(--color-dark);
+  }
+
+  &--fixed &__address {
+    color: var(--color-dark);
+  }
+
+  &--transparent:not(.headroom--not-top) {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    position: relative;
+  }
+
+  &__logo {
+    --color-delay: .0s;
+
+    display: block;
+
+    color: var(--color-white);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    line-height: 1;
+    font-size: 30px;
+
+    height: 58px;
+    width: 137px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transform-origin: top left;
+    transition: color var(--color-delay) ease, transform .3s ease;
+
+    @media (--tablet) {
+      top: -5px;
+    }
+
+    @media (--tablet-landscape) {
+      --color-delay: 100ms;
+
+      height: 38px;
+      width: 93px;
+
+      top: 10px;
+    }
+
+    @media (--desktop) {
+      height: 56px;
+      width: 138px;
+
+      top: -1px;
+    }
+  }
+
+  &__info {
+    display: none;
+    color: var(--color-white);
+
+    p {
+      margin: 0;
+    }
+
+    @media (--tablet-landscape) {
+      display: block;
+      margin-left: 170px;
+    }
+
+    @media (--desktop) {
+      font-size: 16px;
+      margin-left: 220px;
+    }
+  }
+
+  &__time {
+    font-size: 0.8em;
+  }
+
+  &__telnum {
+    color: var(--color-white);
+    font-size: 1.4em;
+    text-decoration: none;
+
+    transition: color .1s ease;
+
+    &:hover {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+  }
+
+  &__links {
+    display: none;
+
+    @media (--tablet) {
+      display: block;
+      font-size: 12px;
+      line-height: 27px;
+      font-weight: 600;
+
+      padding-left: 0;
+      margin-left: 193px;
+    }
+
+    @media (--tablet-landscape) {
+      display: none;
+    }
+
+    @media (--desktop) {
+      display: block;
+
+      margin-left: auto;
+      line-height: 25px;
+    }
+  }
+
+  &__request {
+    display: none;
+
+    @media (--tablet) {
+      display: block;
+      margin-left: auto;
+      width: 163px;
+      padding: 0;
+    }
+
+    @media (--tablet-landscape) {
+      margin-left: 28px;
+
+      width: 194px;
+    }
+  }
+
+  &__burger-button {
+    height: 48px;
+    width: 48px;
+
+    margin-left: auto;
+
+    opacity: 0;
+
+    &:defined {
+      opacity: 1;
+      transition: opacity .1s .5s ease-in;
+    }
+
+    @media (--tablet) {
+      margin-left: 20px;
+    }
+
+    @media (--tablet-landscape) {
+      display: none;
+    }
+  }
 }

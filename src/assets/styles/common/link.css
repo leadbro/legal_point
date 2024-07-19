@@ -1,3 +1,6 @@
 .link {
 
+  &--light {
+    color: inherit;
+  }
 }

@@ -1,3 +1,20 @@
 :root {
+  --color-gray-light: #C6CCD8;
+  --color-gray-light-2: rgb(198 204 216 / 0.3);
+  --color-gray-light-3: rgb(198 204 216 / 0.5);
+  --color-gray: #546071;
 
+  --color-white: #FFFFFF;
+
+  /*--color-primary: #00B4FB;*/
+  --color-primary: #74748F;
+  --color-transparent: rgba(255,255,255,0);
+
+  --color-blue: #0A41D0;
+  --color-purple: #7517D2;
+
+  --color-dark: #14141e;
+  --color-light: #FBFBFC;
+
+  --color-error: tomato;
 }
