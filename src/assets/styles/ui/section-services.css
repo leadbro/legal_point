@@ -9,10 +9,6 @@
   &__title {
     color: var(--color-dark);
     font-size: 34px;
-    margin-bottom: 24px;
-  }
-
-  &__text {
     margin-bottom: 36px;
   }
 
@@ -40,8 +36,16 @@
       max-width: 80%;
     }
 
-    p {
-      font-size: 12px;
+    ul {
+      display: flex;
+      flex-direction: column;
+      row-gap: 6px;
+      padding-top: 20px;
+      padding-left: 14px;
+    }
+
+    li {
+      font-size: 13px;
       line-height: 18px;
     }
   }

@@ -10,7 +10,7 @@
 
   @media (--tablet) {
     --side-padding: 34px;
-    --body-offset: 95px;
+    --body-offset: 120px;
     --media-screen: tablet;
   }
 
