@@ -1,6 +1,11 @@
 .section-services {
-  padding-top: 40px;
-  padding-bottom: 80px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+
+  @media (--tablet-landscape) {
+    padding-top: 40px;
+    padding-bottom: 80px;
+  }
 
   &__container {
 
@@ -8,16 +13,36 @@
 
   &__title {
     color: var(--color-dark);
-    font-size: 34px;
-    margin-bottom: 36px;
+    font-size: 24px;
+    line-height: 1.1;
+    margin-bottom: 24px;
+
+    @media (--tablet-landscape) {
+      font-size: 34px;
+      margin-bottom: 36px;
+    }
   }
 
   &__list {
+    @mixin hide-scrollbar;
+
     display: grid;
     padding: 0;
     margin: 0;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 24px;
+
+    @media (--mobile) {
+      grid-template-columns: repeat(4, 250px);
+
+      overflow-x: scroll;
+      position: relative;
+      left: calc(0% - var(--side-padding));
+      width: 100vw;
+      padding-left: var(--side-padding);
+      padding-right: var(--side-padding);
+      scroll-snap-type: x mandatory;
+    }
   }
 
   &__item {
@@ -26,6 +51,7 @@
     list-style: none;
 
     padding: 28px 16px 24px;
+    scroll-snap-align: center;
 
     h6 {
       font-size: 18px;

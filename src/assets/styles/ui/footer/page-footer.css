@@ -6,21 +6,36 @@
 
   &__wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+
+    @media (--tablet-landscape) {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   &__right {
-    margin-left: auto;
-    text-align: right;
+    margin-top: 8px;
+
+    @media (--tablet-landscape) {
+      margin-top: 0;
+      margin-left: auto;
+      text-align: right;
+    }
   }
 
   &__logo {
+    display: block;
     color: var(--color-dark);
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 800;
     line-height: 1;
     font-size: 16px;
+    margin-bottom: 4px;
+
+    @media (--tablet-landscape) {
+      margin-bottom: 0;
+    }
   }
 
   &__telnum {
