@@ -1,10 +1,16 @@
 import Headroom from 'headroom.js'
 import App from '@/app/App.js'
 
+import CBurgerButton from '@/components/c-burger-button/c-burger-button.js'
+import CPopup from '@/components/c-popup/c-popup.js'
+
 const app = new App({
   plugins: {},
 
-  components: {},
+  components: {
+    CBurgerButton,
+    CPopup,
+  },
 
   methods: { 
     initScrollBehavior() {
@@ -28,6 +34,52 @@ const app = new App({
         header.classList.remove('headroom--faded')
       })
     },
+    initPolicy() {
+      const policy = document.getElementById('form-policy')
+      const links = document.querySelectorAll('.js-policy')
+
+      links.forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+
+          policy.toggle(true)
+        })
+      })
+    },
+    initBurgerMenu() {
+      const menu = document.querySelector('#mobile-menu'),
+          burger = document.querySelector('#burger-button'),
+          header = document.querySelector('#header'),
+          mobileRequestButton = document.querySelector('#mobile-request-button')
+      // requestButton = document.querySelector('#request-button')
+
+      burger.addEventListener('click', () => {
+        menu.toggle(burger.opened)
+
+        header.classList.toggle('page-header--fixed', burger.opened)
+      })
+
+      menu.addEventListener('hide', () => {
+        burger.toggle(false)
+
+        header.classList.toggle('page-header--fixed', false)
+      })
+
+
+      mobileRequestButton.addEventListener('click', () => {
+        burger.toggle(false)
+        menu.toggle(false)
+
+        header.classList.toggle('page-header--fixed', false)
+      })
+
+      // requestButton.addEventListener('click', () => {
+      //   burger.toggle(false)
+      //   menu.toggle(false)
+
+      //   header.classList.toggle('page-header--fixed', false)
+      // })
+    },
   },
 
   created() {},
@@ -39,6 +91,10 @@ const app = new App({
     this.initHeadroom()
 
     this.initScrollBehavior()
+
+    this.initBurgerMenu()
+
+    this.initPolicy()
   },
 })
 

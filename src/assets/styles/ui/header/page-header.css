@@ -79,7 +79,7 @@
   }
 
   &--fixed &__logo {
-    color: var(--color-dark);
+    /*color: var(--color-dark);*/
     transform: scale(1);
   }
 
@@ -175,20 +175,22 @@
   }
 
   &__links {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 500;
+    white-space: nowrap;
+
+    padding-left: 0;
+    margin-left: auto;
+    margin-top: -2px;
+    margin-bottom: 0;
 
     @media (--tablet) {
-      display: flex;
-      flex-direction: column;
-      font-size: 12px;
       line-height: 27px;
       font-weight: 600;
-      white-space: nowrap;
-
-      padding-left: 0;
-      margin-left: auto;
       margin-top: 0;
-      margin-bottom: 0;
     }
 
     @media (--desktop) {
@@ -214,6 +216,8 @@
   }
 
   &__burger-button {
+    display: none;
+
     height: 38px;
     width: 38px;
 
@@ -227,10 +231,6 @@
     }
 
     @media (--tablet) {
-      margin-left: 20px;
-    }
-
-    @media (--tablet-landscape) {
       display: none;
     }
   }

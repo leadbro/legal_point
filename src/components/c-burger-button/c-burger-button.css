@@ -1,0 +1,98 @@
+.c-burger-button {
+  --time: 300ms;
+
+  display: block;
+
+  appearance: none;
+  cursor: pointer;
+
+  border: none;
+  background: none;
+  font-size: 32px;
+  outline: none;
+
+  padding: 0;
+  margin: 0;
+
+  height: 1em;
+  width: 1em;
+
+  position: relative;
+
+  @media (--desktop) {
+    font-size: 30px;
+  }
+
+  &__burger {
+    transition: opacity .2s ease;
+
+    &--mobile {
+
+      @media (--desktop) {
+        display: none;
+      }
+    }
+  }
+
+  &__burger,
+  &__close {
+    height: 1em;
+    width: 1em;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__close {
+    transform: scale(0);
+    transition: transform var(--time) ease;
+  }
+
+  &__line {
+    fill: none;
+    stroke-width: 1px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transform-origin: 50%;
+    transition: transform var(--time) ease, color var(--time) ease;
+    stroke: var(--color-white);
+  }
+
+  &__close &__line {
+    stroke: var(--color-white);
+    stroke-width: 1px;
+  }
+
+  &__burger:hover &__line {
+    stroke: var(--color-ocher);
+
+    &:nth-child(1) {
+      transform: translateY(-2px);
+    }
+
+    &:nth-child(3) {
+      transform: translateY(2px);
+    }
+  }
+
+  &--active &__burger {
+    opacity: 0;
+  }
+
+  &--active &__burger &__line {
+    transform: scale(0) !important;
+  }
+
+  &--active &__close {
+    transform: scale(1) !important;
+  }
+
+  &--active &__close:hover {
+    transform: scale(1.2) !important;
+
+    ^&__line {
+      stroke: var(--color-ocher);
+    }
+  }
+}

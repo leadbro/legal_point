@@ -1,3 +1,82 @@
 .mobile-menu {
+  display: flex;
+  flex-direction: column;
 
+  background-color: var(--color-dark);
+
+  min-height: 100%;
+  width: 100%;
+
+  padding: 30px var(--side-padding);
+  padding-top: var(--body-offset);
+
+  @media (--tablet) {
+    min-height: 0;
+  }
+
+  &__footer {
+    padding-right: var(--scrollbar-gap);
+    margin-top: auto;
+
+    @media (--tablet) {
+      display: none;
+
+      width: 40%;
+
+      margin-left: auto;;
+      margin-right: auto;
+    }
+  }
+
+  &__button {
+    min-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &__info {
+    color: var(--color-white);
+    font-size: 13px;
+    padding-top: 40px;
+
+    margin-bottom: 24px;
+
+    p {
+      margin: 0;
+    }
+  }
+  
+  &__page-footer {
+    color: var(--color-white);
+  }
+
+  &__time {
+    font-size: 0.8em;
+  }
+
+  &__telnum {
+    color: var(--color-white);
+    font-size: 1.2em;
+    text-decoration: none;
+
+    transition: color .1s ease;
+
+    &:hover {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    line-height: 27px;
+    font-weight: 600;
+    white-space: nowrap;
+
+    padding-left: 0;
+    margin-left: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }

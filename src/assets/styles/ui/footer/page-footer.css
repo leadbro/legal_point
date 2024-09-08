@@ -42,4 +42,18 @@
     color: inherit;
     text-decoration: none;
   }
+
+  &__address {
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+    p {
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    @media (--tablet) {
+      display: none;
+    }
+  }
 }
