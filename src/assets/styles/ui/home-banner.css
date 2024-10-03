@@ -46,6 +46,10 @@
     position: relative;
     z-index: 2;
 
+    @media (--tablet) {
+      padding-bottom: 40px;
+    }
+
     @media (--tablet-landscape) {
       grid-template-columns: 1fr 1fr;
       padding-bottom: 0;

@@ -32,7 +32,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 24px;
 
-    @media (--mobile) {
+    @media (--max-tablet-landscape) {
       grid-template-columns: repeat(4, 250px);
 
       overflow-x: scroll;
