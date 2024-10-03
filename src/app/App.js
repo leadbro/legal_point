@@ -68,9 +68,13 @@ export default class App {
 
     pluginsKeys.forEach(key => {
       const plugin = plugins[key]
-      const name = key
+      const name = '$' + key
 
-      this[name] = plugin
+      if (typeof plugin === 'function') {
+        this[name] = new plugin
+      } else {
+        this[name] = plugin
+      }
     })
   }
 

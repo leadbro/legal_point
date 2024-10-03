@@ -4,8 +4,12 @@ import App from '@/app/App.js'
 import CBurgerButton from '@/components/c-burger-button/c-burger-button.js'
 import CPopup from '@/components/c-popup/c-popup.js'
 
+import formPlugin from '@/plugins/form.js'
+
 const app = new App({
-  plugins: {},
+  plugins: {
+    form: formPlugin,
+  },
 
   components: {
     CBurgerButton,
@@ -45,6 +49,17 @@ const app = new App({
           policy.toggle(true)
         })
       })
+    },
+    async initForms() {
+      await this.$form.init()
+
+      const forms = document.querySelectorAll('.js-form')
+
+      forms.forEach(form => {
+        this.$form.applyTo(form)
+      })
+
+      // this.initPopupForm()
     },
     initBurgerMenu() {
       const menu = document.querySelector('#mobile-menu'),
@@ -95,6 +110,9 @@ const app = new App({
     this.initBurgerMenu()
 
     this.initPolicy()
+
+    // Форма обратной связи
+    this.initForms()
   },
 })
 
